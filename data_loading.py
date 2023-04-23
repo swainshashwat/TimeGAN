@@ -15,9 +15,7 @@ data_loading.py
 
 (0) MinMaxScaler: Min Max normalizer
 (1) sine_data_generation: Generate sine dataset
-(2) real_data_loading: Load and preprocess real data
-  - stock_data: https://finance.yahoo.com/quote/GOOG/history?p=GOOG
-  - energy_data: http://archive.ics.uci.edu/ml/datasets/Appliances+energy+prediction
+(2) real_data_loading: Load and preprocess data
 """
 
 ## Necessary Packages
@@ -77,25 +75,23 @@ def sine_data_generation (no, seq_len, dim):
   return data
     
 
-def real_data_loading (data_name, seq_len):
+def real_data_loading (data, seq_len, flip_data=False):
   """Load and preprocess real-world datasets.
   
   Args:
-    - data_name: stock or energy
+    - data: data
     - seq_len: sequence length
     
   Returns:
     - data: preprocessed data.
   """  
-  assert data_name in ['stock','energy']
   
-  if data_name == 'stock':
-    ori_data = np.loadtxt('data/stock_data.csv', delimiter = ",",skiprows = 1)
-  elif data_name == 'energy':
-    ori_data = np.loadtxt('data/energy_data.csv', delimiter = ",",skiprows = 1)
-        
-  # Flip the data to make chronological data
-  ori_data = ori_data[::-1]
+  ori_data = data
+
+  if flip_data:
+    # Flip the data to make chronological data
+    ori_data = ori_data[::-1]
+
   # Normalize the data
   ori_data = MinMaxScaler(ori_data)
     
