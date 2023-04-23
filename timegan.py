@@ -18,7 +18,8 @@ Note: Use original data as training set to generater synthetic data (time-series
 
 # Necessary Packages
 import tensorflow.compat.v1 as tf
-tf.disable_v2_behavior() 
+tf.disable_v2_behavior()
+import tensorflow as tf2
 
 import numpy as np
 from utils import extract_time, rnn_cell, random_generator, batch_generator

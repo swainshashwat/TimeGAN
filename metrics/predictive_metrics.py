@@ -18,7 +18,9 @@ Note: Use Post-hoc RNN to predict one-step ahead (last feature)
 
 # Necessary Packages
 import tensorflow.compat.v1 as tf
-tf.disable_v2_behavior() 
+tf.disable_v2_behavior()
+import tensorflow as tf2
+
 import numpy as np
 from sklearn.metrics import mean_absolute_error
 from utils import extract_time
