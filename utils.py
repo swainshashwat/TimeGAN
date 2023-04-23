@@ -23,6 +23,7 @@ utils.py
 ## Necessary Packages
 import numpy as np
 import tensorflow as tf
+tf.compat.v1.disable_eager_execution()
 
 
 def train_test_divide (data_x, data_x_hat, data_t, data_t_hat, train_rate = 0.8):
