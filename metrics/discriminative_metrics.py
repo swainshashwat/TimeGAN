@@ -19,9 +19,7 @@ Output: discriminative score (np.abs(classification accuracy - 0.5))
 """
 
 # Necessary Packages
-import tensorflow.compat.v1 as tf
-tf.disable_v2_behavior() 
-import tensorflow as tf2
+import tensorflow as tf
 import numpy as np
 from sklearn.metrics import accuracy_score
 from utils import train_test_divide, extract_time, batch_generator

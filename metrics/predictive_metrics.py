@@ -17,9 +17,7 @@ Note: Use Post-hoc RNN to predict one-step ahead (last feature)
 """
 
 # Necessary Packages
-import tensorflow.compat.v1 as tf
-tf.disable_v2_behavior()
-import tensorflow as tf2
+import tensorflow as tf
 
 import numpy as np
 from sklearn.metrics import mean_absolute_error
